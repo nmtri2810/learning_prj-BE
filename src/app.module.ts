@@ -5,6 +5,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './modules/users/users.module';
 import typeormConfig from './config/typeorm.config';
+import { ChatModule } from './modules/chat/chat.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import typeormConfig from './config/typeorm.config';
       inject: [ConfigService],
     }),
     UsersModule,
+    ChatModule,
   ],
   controllers: [AppController],
   providers: [AppService],
